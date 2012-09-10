@@ -120,7 +120,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'south',
+    'tagging',
+    'mptt',
+    'zinnia',
     'bases_core',
+    'imagekit',
 )
 
 # A sample logging configuration. The only tangible logging
