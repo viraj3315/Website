@@ -1,4 +1,5 @@
 # Django settings for bases project.
+import django.conf.global_settings as DEFAULT_SETTINGS
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -79,6 +80,10 @@ STATICFILES_FINDERS = (
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '0lvo9tr(l!hb-v2uyg*!_nni9ny4ip-vy*5(fd2w$gk5%!j77z'
+
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'zinnia.context_processors.version',
+)
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
