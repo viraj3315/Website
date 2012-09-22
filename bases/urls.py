@@ -18,9 +18,19 @@ admin.autodiscover()
 
 urlpatterns = patterns('bases_core.views',
     url(r'^$', 'index'),
-    url(r'^about$', 'about'),
+    url(r'^about/$', 'about'),
 )
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('',
+    url(r'^weblog/', include('zinnia.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+)
+
+# ebootcamp
+urlpatterns += patterns('',
+    url(r'^ebootcamp/', include('ebootcamp.urls')),
+)    
