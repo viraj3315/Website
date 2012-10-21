@@ -33,7 +33,15 @@
 		<ul id="navigation" class="grid_8">
 			<li><a href="#" {% ifequal active_tab "resources" %}class="current"{% endifequal %}><span class="meta">Find useful</span><br />Resources</a></li>
 			<li><a href="#" {% ifequal active_tab "events" %}class="current"{% endifequal %}><span class="meta">Latest</span><br />Events</a></li>
-			<li><a href="#" {% ifequal active_tab "programs" %}class="current"{% endifequal %}><span class="meta">Learn about our</span><br />Programs</a></li>
+			<li><a href="#" {% ifequal active_tab "programs" %}class="current"{% endifequal %}><span class="meta">Learn about our</span><br />Programs</a>
+				<ul>
+				<li><a href="#">E-Challenge</a></li>
+				<li><a href="#">Social E-Challenge</a></li>
+				<li><a href="#">Product Showcase</a></li>
+				<li><a href="#">E-Bootcamp</a></li>
+				<li><a href="#">ETL</a></li>
+				</ul>
+			</li>
 				
 			<li><a href="/about" {% ifequal active_tab "about" %}class="current"{% endifequal %}><span class="meta">Who are we?</span><br />About</a></li>
 			<li><a href="/" {% ifequal active_tab "index" %}class="current"{% endifequal %}><span class="meta">Take me</span><br />Home</a></li>
