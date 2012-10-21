@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'zinnia',
     'bases_core',
     'imagekit',
+    'sitemanager',
 )
 
 # A sample logging configuration. The only tangible logging
