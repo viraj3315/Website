@@ -1,5 +1,6 @@
 # Django settings for bases project.
 import django.conf.global_settings as DEFAULT_SETTINGS
+import user_specific as my
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -15,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/aostiles/Dropbox/web_development/django/bases/bases_db',                      # Or path to database file if using sqlite3.
+        'NAME': my.DB_NAME,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -81,7 +82,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '0lvo9tr(l!hb-v2uyg*!_nni9ny4ip-vy*5(fd2w$gk5%!j77z'
+SECRET_KEY = my.SECRET_KEY
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.contrib.auth.context_processors.auth',
@@ -118,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/aostiles/Dropbox/web_development/django/bases/templates',
+    my.TEMPLATE_DIR_LOCATION,
 )
 
 INSTALLED_APPS = (
