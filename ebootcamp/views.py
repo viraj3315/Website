@@ -13,6 +13,9 @@ def static_page(request, page_alias):
     pages = Page.objects.filter(
                 Q(url=page_alias))
     for page in pages:
-        if 'ebootcamp' in page.groups.values_list('name',flat=True): 
-            return HttpResponse(page.content)
+        if 'ebootcamp' in page.groups.values_list('name',flat=True):
+        	t = loader.get_template('static/user_page.html')
+        	c = RequestContext(request, {'head' : page.head, 'body' : page.body})
+        	return HttpResponse(t.render(c))
+            #return HttpResponse(page.content)
     raise Http404("Page does not exist")
