@@ -90,7 +90,7 @@ TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
-    'zinnia.context_processors.version',
+    #'zinnia.context_processors.version',
 )
 
 # List of callables that know how to import templates from various sources.
