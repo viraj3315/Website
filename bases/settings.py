@@ -135,11 +135,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
-    'tagging',
-    'mptt',
-    'zinnia',
+    #'tagging',
+    #'mptt',
+    #'zinnia',
     'bases_core',
-    'imagekit',
+    #'imagekit',
     'sitemanager',
 )
 
