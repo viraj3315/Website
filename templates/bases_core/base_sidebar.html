@@ -1,1 +1,11 @@
 {% extends "bases_core/base.html" %}
+
+{% block sidebar %}
+<div id="sidebar">
+<ul id="sidebar">
+    {% for entry in sidebar_entries %}
+        <li><a href="#">{{ entry.name }}</a></li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock sidebar %}
