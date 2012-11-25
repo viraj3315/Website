@@ -12,10 +12,32 @@ def about(request):
 def static_page(request, page_alias):
     pages = Page.objects.filter(
                 Q(url=page_alias))
+    sidebar_contents=get_sidebar_content()
     for page in pages:
         if 'ebootcamp' in page.groups.values_list('name',flat=True):
         	t = loader.get_template('static/user_page.html')
-        	c = RequestContext(request, {'head' : page.head, 'body' : page.body})
+        	c = RequestContext(request, {'head' : page.head, 'body' : page.body, 'sidebar_entries' : sidebar_contents })
         	return HttpResponse(t.render(c))
             #return HttpResponse(page.content)
     raise Http404("Page does not exist")
+
+def root(request):
+    pages = Page.objects.filter(
+                Q(url="about"))
+    sidebar_contents=get_sidebar_content()
+    for page in pages:
+        if 'ebootcamp' in page.groups.values_list('name',flat=True):
+            t = loader.get_template('static/user_page.html')
+            c = RequestContext(request, {'head' : page.head, 'body' : page.body, 'sidebar_entries' : sidebar_contents })
+            return HttpResponse(t.render(c))
+    raise Http404("Page does not exist") 
+
+def get_sidebar_content():
+    pages = Page.objects.all()
+    contents = []
+    for page in pages:
+        if 'ebootcamp' in page.groups.values_list('name',flat=True):
+            link = {}
+            link['name'] = page.title
+            contents.append(link)
+    return contents
