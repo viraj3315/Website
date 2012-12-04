@@ -106,20 +106,29 @@ DESCRIPTION: A premium business and portfolio theme.
 	ul#navigation						{text-transform:uppercase;}
 	ul#navigation li 					{float:right; display:inline; margin : 0 0 0 50px;}
 	ul#navigation li a					{font-family:arial, sans-serif !important; display:block; padding:44px 0 0; text-decoration:none; color:#000000; font-size:14px; font-weight:bold;}
-	ul#navigation li a:hover,
 	ul#navigation li a.current			{background:url(../images/triangle.gif) no-repeat center top;}
 
 	/*--- DROPDOWN ---*/
 	ul#navigation ul{
-	background:url(../images/bg.png) repeat-x #FFFFFF;
-		/*background:#eee; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-		/*background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
-		list-style:none;
-		border-style:dotted;
-		border-width:1px;
+		/*list-style:none;*/
+        /* round the corners of the dropdown */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        text-align:center;
+		/*border-style:dotted;*/
+        line-height: 100%;
+        margin: 0;
+        padding: 7px 6px 0;
+        -webkit-box-shadow: 0 10px 30px rgba(0,0,0,.4);
+        -moz-box-shadow: 0 10px 30px rgba(0,0,0,.4);    
+        border: solid 1px #cccccc;
+        background: #f0f0f0;
 		position:absolute;
-		left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
-		z-index:999;
+        left:-3.5em;
+        display: none;
+		z-index:999; /* make sure the dropdown is in front of all other elements */
 	}
 	ul#navigation ul li{
 		padding-top:0px; /* Introducing a padding between the li and the a give the illusion spaced items */
@@ -132,17 +141,16 @@ DESCRIPTION: A premium business and portfolio theme.
 		white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
 	}
 	ul#navigation li:hover ul{ /* Display the dropdown on hover */
-		left:0; /* Bring back on-screen when needed */
+        display: block;
 	}
 	ul#navigation li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
 		/*background:#6b0c36;*/
-		text-decoration:underline;
 	}
 	ul#navigation li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
 		text-decoration:none;
 	}
 	ul#navigation li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-		text-decoration:underline;
+        color:#606060;
 		background:#eee;
 	}
 
