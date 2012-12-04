@@ -7,7 +7,9 @@
 {% endblock head %}
 
 {% block content %}
+<div id="user_content">
 {% autoescape off %}
 {{ body }}
 {% endautoescape %}
+</div>
 {% endblock content %}
