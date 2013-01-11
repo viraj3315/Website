@@ -4,7 +4,7 @@
 <div id="sidebar">
 <ul id="sidebar">
     {% for entry in sidebar_entries %}
-        <li><a href="#">{{ entry.name }}</a></li>
+        <li><a href="#" {% if entry.current %} class="current" {% endif %} >{{ entry.name }}</a></li>
     {% endfor %}
 </ul>
 </div>
