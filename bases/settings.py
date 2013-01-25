@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'bases_core',
     #'imagekit',
     'sitemanager',
+    'events',
 )
 
 # A sample logging configuration. The only tangible logging
