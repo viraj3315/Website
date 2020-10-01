@@ -1,7 +1,7 @@
 The Ways of the World
 =====================
 
-## Deployment - About this project##
+## Deployment - About this project ##
 Our site is deployed on a Linode server and runs behind nginx using fastcgi.
 Everything is located in `/django/bases/`.
 [This] guide was useful in deploying the site.
